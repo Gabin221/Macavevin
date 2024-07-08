@@ -2,4 +2,7 @@
     <string name="app_name">Ma cave à vin</string>
     <string name="title_vins">Vins</string>
     <string name="title_modifier">Modifier</string>
+    <string name="vins_blancs">Vins blancs</string>
+    <string name="vins_ros_s">Vins rosés</string>
+    <string name="vins_rouges">Vins rouges</string>
 </resources>

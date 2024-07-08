@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.vins.VinsFragment"
-    android:paddingBottom="@dimen/activity_vertical_margin">
+    tools:context=".ui.vins.VinsFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -43,7 +42,7 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:visibility="gone"
-                android:text="Vins blancs" />
+                android:text="@string/vins_blancs" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewBlanc"
@@ -62,7 +61,7 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:visibility="gone"
-                android:text="Vins rosés" />
+                android:text="@string/vins_ros_s" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewRose"
@@ -81,7 +80,7 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:visibility="gone"
-                android:text="Vins rouges" />
+                android:text="@string/vins_rouges" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewRouge"
