@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ma cave à vin</string>
+    <string name="title_vins">Vins</string>
+    <string name="title_modifier">Modifier</string>
+</resources>
