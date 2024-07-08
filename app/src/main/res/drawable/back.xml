@@ -3,6 +3,8 @@
     <!-- use this for transparent -->
     <!-- <solid android:color="#00000000" /> -->
     <!-- use this for a background colour -->
+    <corners
+        android:radius="10dp" />
     <solid
         android:color="#FFF" />
     <stroke

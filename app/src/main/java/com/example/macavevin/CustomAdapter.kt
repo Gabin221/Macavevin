@@ -31,8 +31,8 @@ class CustomAdapter(private val mList: List<VinsViewModel>) : RecyclerView.Adapt
         holder.categorieTextView.text = ItemsViewModel.categorie
 
         val textCalendrier: TextView = holder.calendrierTexte
-        val text = ""
-        val spannableString = SpannableString(" $text ")
+        val text = " "
+        val spannableString = SpannableString("$text")
         val drawableStart = ContextCompat.getDrawable(holder.context, R.drawable.ic_calendrier)
         drawableStart?.setBounds(0, 0, drawableStart.intrinsicWidth, drawableStart.intrinsicHeight)
         val imageSpanStart = ImageSpan(drawableStart!!, ImageSpan.ALIGN_BOTTOM)
