@@ -18,6 +18,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/nomTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -27,6 +28,7 @@
             android:textColor="@color/purple_500"/>
 
         <TextView
+            android:id="@+id/regionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -36,7 +38,6 @@
             android:textSize="16sp" />
 
         <LinearLayout
-            android:id="@+id/datas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -58,7 +59,7 @@
                     android:textColor="@color/purple_500"/>
 
                 <TextView
-                    android:id="@+id/textViewQuantite"
+                    android:id="@+id/quantiteTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -87,7 +88,7 @@
                     android:textColor="@color/purple_500"/>
 
                 <TextView
-                    android:id="@+id/textViewAnnee"
+                    android:id="@+id/anneeTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -116,7 +117,7 @@
                     android:textColor="@color/purple_500"/>
 
                 <TextView
-                    android:id="@+id/textViewZone"
+                    android:id="@+id/zoneTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -131,6 +132,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/categorieTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Blanc"
