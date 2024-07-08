@@ -55,6 +55,7 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx:23.0.3")
     implementation("androidx.recyclerview:recyclerview:1.2.0")
     implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.google.android.material:material:1.2.1")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
