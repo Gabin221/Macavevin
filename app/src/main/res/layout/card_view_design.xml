@@ -22,7 +22,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Gewurztraminer"
             android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="@color/purple_500"/>
@@ -32,9 +31,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Alsace"
             android:textStyle="bold"
             android:textColor="@color/black"
+            android:layout_marginVertical="10dp"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -64,7 +63,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:textColor="@color/black"
-                    android:text="5"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
@@ -92,7 +90,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="2015"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="15sp"
@@ -121,7 +118,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="rayon 2"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textAlignment="center"
@@ -135,10 +131,10 @@
             android:id="@+id/categorieTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Blanc"
             android:textAlignment="center"
             android:textSize="16sp"
             android:textColor="@color/black"
+            android:layout_marginTop="10dp"
             android:textStyle="bold" />
 
     </LinearLayout>

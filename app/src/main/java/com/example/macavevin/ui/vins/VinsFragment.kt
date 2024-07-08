@@ -100,6 +100,7 @@ class VinsFragment : Fragment() {
                         val zone = document.getString("zone") ?: ""
                         val categorie = genre
                         val element = VinsViewModel(annee, nom, quantite, region, zone, categorie)
+
                         data.add(element)
                     }
                     val adapter = CustomAdapter(data)
