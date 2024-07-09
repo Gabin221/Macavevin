@@ -5,4 +5,14 @@
     <string name="vins_blancs">Vins blancs</string>
     <string name="vins_ros_s">Vins rosés</string>
     <string name="vins_rouges">Vins rouges</string>
+    <string name="ajouter_un_vin">Ajouter un vin</string>
+    <string name="nom">Nom</string>
+    <string name="type">Type</string>
+    <string name="r_gion">Région</string>
+    <string name="ann_e">Année</string>
+    <string name="zone">Zone</string>
+    <string name="quantit">Quantité</string>
+    <string name="_1">1</string>
+    <string name="ajouter">Ajouter</string>
+    <string name="supprimer_un_vin">Supprimer un vin</string>
 </resources>
