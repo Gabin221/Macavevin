@@ -34,6 +34,9 @@ class VinsFragment : Fragment() {
     private lateinit var titreRose: TextView
     private lateinit var titreRouge: TextView
 
+    private lateinit var viewBlancRose: View
+    private lateinit var viewRoseRouge: View
+
     private var originalDataBlanc = listOf<VinsViewModel>()
     private var originalDataRose = listOf<VinsViewModel>()
     private var originalDataRouge = listOf<VinsViewModel>()
@@ -59,6 +62,9 @@ class VinsFragment : Fragment() {
             titreBlanc = root.findViewById(R.id.titreBlanc)
             titreRose = root.findViewById(R.id.titreRose)
             titreRouge = root.findViewById(R.id.titreRouge)
+
+            viewBlancRose = root.findViewById(R.id.viewBlancRose)
+            viewRoseRouge = root.findViewById(R.id.viewRoseRouge)
 
             adapterBlanc = CustomAdapter(emptyList())
             adapterRose = CustomAdapter(emptyList())
@@ -106,6 +112,9 @@ class VinsFragment : Fragment() {
         titreBlanc.visibility = if (filteredBlanc.isNotEmpty()) View.VISIBLE else View.GONE
         titreRose.visibility = if (filteredRose.isNotEmpty()) View.VISIBLE else View.GONE
         titreRouge.visibility = if (filteredRouge.isNotEmpty()) View.VISIBLE else View.GONE
+
+        viewBlancRose.visibility = if (filteredBlanc.isNotEmpty()) View.VISIBLE else View.GONE
+        viewRoseRouge.visibility = if (filteredRose.isNotEmpty()) View.VISIBLE else View.GONE
     }
 
     private fun chargerVins() {

@@ -50,13 +50,14 @@
                 android:id="@+id/recyclerViewBlanc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
                 tools:itemCount="5"
                 tools:listitem="@layout/card_view_design"/>
 
             <View
+                android:id="@+id/viewBlancRose"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_margin="30dp"
                 android:background="@color/black"/>
 
             <TextView
@@ -68,20 +69,20 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:visibility="gone"
-                android:text="@string/vins_ros_s"
-                android:layout_marginTop="30dp" />
+                android:text="@string/vins_ros_s" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewRose"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
                 tools:itemCount="5"
                 tools:listitem="@layout/card_view_design" />
 
             <View
+                android:id="@+id/viewRoseRouge"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_margin="30dp"
                 android:background="@color/black"/>
 
             <TextView
@@ -93,14 +94,12 @@
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:visibility="gone"
-                android:text="@string/vins_rouges"
-                android:layout_marginTop="30dp" />
+                android:text="@string/vins_rouges" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewRouge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
                 tools:itemCount="5"
                 tools:listitem="@layout/card_view_design" />
 
