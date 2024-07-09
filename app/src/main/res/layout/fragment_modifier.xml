@@ -28,6 +28,7 @@
                 android:textColor="@color/black"/>
 
             <EditText
+                android:id="@+id/editTextNom"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="40dp"
@@ -39,6 +40,7 @@
                 android:paddingHorizontal="15dp"/>
 
             <EditText
+                android:id="@+id/editTextType"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="10dp"
@@ -50,6 +52,7 @@
                 android:paddingHorizontal="15dp"/>
 
             <EditText
+                android:id="@+id/editTextRegion"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="10dp"
@@ -61,6 +64,7 @@
                 android:paddingHorizontal="15dp"/>
 
             <EditText
+                android:id="@+id/editTextAnnee"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="10dp"
@@ -72,6 +76,7 @@
                 android:paddingHorizontal="15dp"/>
 
             <EditText
+                android:id="@+id/editTextZone"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="10dp"
@@ -83,6 +88,7 @@
                 android:paddingHorizontal="15dp"/>
 
             <EditText
+                android:id="@+id/editTextQuantite"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="10dp"
@@ -95,6 +101,7 @@
                 android:paddingHorizontal="15dp"/>
 
             <Button
+                android:id="@+id/buttonAjouter"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="40dp"
