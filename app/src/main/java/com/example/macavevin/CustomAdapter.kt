@@ -1,6 +1,5 @@
 package com.example.macavevin
 
-import android.content.Context
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ImageSpan
@@ -10,30 +9,33 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.macavevin.databinding.CardViewDesignBinding
 
-class CustomAdapter(private val mList: List<VinsViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private var mList: List<VinsViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+
+    fun updateData(newList: List<VinsViewModel>) {
+        mList = newList
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_view_design, parent, false)
-
-        return ViewHolder(view, parent.context)
+        val binding = CardViewDesignBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val ItemsViewModel = mList[position]
+        val item = mList[position]
+        holder.binding.nomTextView.text = item.nom
+        holder.binding.anneeTextView.text = item.annee
+        holder.binding.quantiteTextView.text = item.quantite
+        holder.binding.regionTextView.text = item.region
+        holder.binding.zoneTextView.text = item.zone
+        holder.binding.categorieTextView.text = item.categorie
 
-        holder.nomTextView.text = ItemsViewModel.nom
-        holder.regionTextView.text = ItemsViewModel.region
-        holder.quantiteTextView.text = ItemsViewModel.quantite
-        holder.anneeTextView.text = ItemsViewModel.annee
-        holder.zoneTextView.text = ItemsViewModel.zone
-        holder.categorieTextView.text = ItemsViewModel.categorie
-
-        val textCalendrier: TextView = holder.calendrierTexte
+        val textCalendrier: TextView = holder.binding.calendrierTexte
         val text = " "
         val spannableString = SpannableString("$text")
-        val drawableStart = ContextCompat.getDrawable(holder.context, R.drawable.ic_calendrier)
+        val drawableStart = ContextCompat.getDrawable(holder.binding.root.context, R.drawable.ic_calendrier)
         drawableStart?.setBounds(0, 0, drawableStart.intrinsicWidth, drawableStart.intrinsicHeight)
         val imageSpanStart = ImageSpan(drawableStart!!, ImageSpan.ALIGN_BOTTOM)
         spannableString.setSpan(imageSpanStart, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
@@ -44,13 +46,5 @@ class CustomAdapter(private val mList: List<VinsViewModel>) : RecyclerView.Adapt
         return mList.size
     }
 
-    class ViewHolder(ItemView: View, val context: Context) : RecyclerView.ViewHolder(ItemView) {
-        val nomTextView: TextView = itemView.findViewById(R.id.nomTextView)
-        val regionTextView: TextView = itemView.findViewById(R.id.regionTextView)
-        val quantiteTextView: TextView = itemView.findViewById(R.id.quantiteTextView)
-        val anneeTextView: TextView = itemView.findViewById(R.id.anneeTextView)
-        val zoneTextView: TextView = itemView.findViewById(R.id.zoneTextView)
-        val categorieTextView: TextView = itemView.findViewById(R.id.categorieTextView)
-        val calendrierTexte: TextView = itemView.findViewById(R.id.calendrierTexte)
-    }
+    class ViewHolder(val binding: CardViewDesignBinding) : RecyclerView.ViewHolder(binding.root)
 }
