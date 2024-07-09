@@ -98,6 +98,14 @@ class VinsFragment : Fragment() {
         adapterBlanc.updateData(filteredBlanc)
         adapterRose.updateData(filteredRose)
         adapterRouge.updateData(filteredRouge)
+
+        updateTitleVisibility(filteredBlanc, filteredRose, filteredRouge)
+    }
+
+    private fun updateTitleVisibility(filteredBlanc: List<VinsViewModel>, filteredRose: List<VinsViewModel>, filteredRouge: List<VinsViewModel>) {
+        titreBlanc.visibility = if (filteredBlanc.isNotEmpty()) View.VISIBLE else View.GONE
+        titreRose.visibility = if (filteredRose.isNotEmpty()) View.VISIBLE else View.GONE
+        titreRouge.visibility = if (filteredRouge.isNotEmpty()) View.VISIBLE else View.GONE
     }
 
     private fun chargerVins() {
