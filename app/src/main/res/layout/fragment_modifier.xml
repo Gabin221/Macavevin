@@ -39,17 +39,14 @@
                 android:background="@drawable/back"
                 android:paddingHorizontal="15dp"/>
 
-            <EditText
-                android:id="@+id/editTextType"
+            <Spinner
+                android:id="@+id/spinnerType"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginHorizontal="30dp"
-                android:autofillHints="Type de vin"
-                android:hint="@string/type"
-                android:inputType="text"
                 android:background="@drawable/back"
-                android:paddingHorizontal="15dp"/>
+                android:paddingHorizontal="15dp" />
 
             <EditText
                 android:id="@+id/editTextRegion"
