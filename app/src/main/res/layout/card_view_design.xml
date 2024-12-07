@@ -16,6 +16,14 @@
         android:orientation="vertical"
         android:background="@drawable/back">
 
+        <ImageButton
+            android:id="@+id/imageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_bin"
+            android:backgroundTint="#FF0000"/>
+
         <TextView
             android:id="@+id/nomTextView"
             android:layout_width="match_parent"
