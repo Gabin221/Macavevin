@@ -30,13 +30,6 @@ class ModifierFragment : Fragment() {
     private lateinit var editTextQuantite: EditText
     private lateinit var buttonAjouter: Button
 
-    private lateinit var idLV: ListView
-    private lateinit var idSV: SearchView
-
-    private lateinit var listAdapter: ArrayAdapter<Pair<String, String>>
-    private var vinsList = ArrayList<Pair<String, String>>()
-    private val categories = listOf("Blanc", "Rosé", "Rouge")
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -54,10 +47,8 @@ class ModifierFragment : Fragment() {
         editTextZone = root.findViewById(R.id.editTextZone)
         editTextQuantite = root.findViewById(R.id.editTextQuantite)
         buttonAjouter = root.findViewById(R.id.buttonAjouter)
-        idLV = root.findViewById(R.id.idLV)
-        idSV = root.findViewById(R.id.idSV)
 
-        val spinnerAdapterType = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, listOf("Type de vin", "Blanc", "Rosé", "Rouge"))
+        val spinnerAdapterType = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, listOf("Sélectionner un type de vin", "Blanc", "Rosé", "Rouge"))
         spinnerAdapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerType.adapter = spinnerAdapterType
 
@@ -76,7 +67,7 @@ class ModifierFragment : Fragment() {
         val zone = editTextZone.text.toString()
         val quantite = editTextQuantite.text.toString().toIntOrNull() ?: 1
 
-        if (nom.isBlank() || type.equals("Type") || region.isBlank() || annee.isBlank() || zone.isBlank() || quantite <= 0) {
+        if (nom.isBlank() || type.equals("Sélectionner un type de vin") || region.isBlank() || annee.isBlank() || zone.isBlank() || quantite <= 0) {
             Toast.makeText(requireContext(), "Tous les champs doivent être remplis", Toast.LENGTH_SHORT).show()
             return
         }
@@ -91,7 +82,6 @@ class ModifierFragment : Fragment() {
             .get()
             .addOnSuccessListener { documents ->
                 if (documents.isEmpty) {
-                    // Ajouter un nouveau document
                     val newVin = hashMapOf(
                         "annee" to annee,
                         "nom" to nom,
@@ -109,7 +99,6 @@ class ModifierFragment : Fragment() {
                             Toast.makeText(requireContext(), "Erreur lors de l'ajout du vin: ${e.message}", Toast.LENGTH_SHORT).show()
                         }
                 } else {
-                    // Mettre à jour le document existant
                     for (document in documents) {
                         val currentQuantite = document.getString("quantite")?.toIntOrNull() ?: 0
                         val newQuantite = currentQuantite + quantite

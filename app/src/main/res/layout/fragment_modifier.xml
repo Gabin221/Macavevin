@@ -7,6 +7,19 @@
     android:paddingBottom="56dp"
     tools:context=".ui.vins.VinsFragment">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ajouter_un_vin"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,16 +29,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ajouter_un_vin"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textSize="25sp"
-                android:textColor="@color/black"/>
 
             <EditText
                 android:id="@+id/editTextNom"
@@ -94,7 +99,6 @@
                 android:hint="@string/quantit"
                 android:inputType="text"
                 android:background="@drawable/back"
-                android:text="@string/_1"
                 android:paddingHorizontal="15dp"/>
 
             <Button
@@ -106,39 +110,6 @@
                 android:text="@string/ajouter"
                 android:background="@drawable/back"
                 android:textColor="@color/white"/>
-
-            <View
-                android:id="@+id/viewBlancRose"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_margin="30dp"
-                android:background="@color/black"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/supprimer_un_vin"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:textSize="25sp"
-                android:textColor="@color/black"/>
-
-            <SearchView
-                android:id="@+id/idSV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginVertical="40dp"
-                android:iconifiedByDefault="false"
-                android:padding="4dp"
-                android:queryHint="Nom, date..."
-                android:background="@drawable/back" />
-
-            <ListView
-                android:id="@+id/idLV"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:visibility="gone" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
