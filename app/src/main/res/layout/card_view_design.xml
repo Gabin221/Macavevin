@@ -16,15 +16,6 @@
         android:orientation="vertical"
         android:background="@drawable/back">
 
-        <ImageButton
-            android:id="@+id/deleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:contentDescription="Bouton de suppression d'un vin"
-            android:src="@drawable/ic_bin"
-            android:backgroundTint="#FF0000"/>
-
         <TextView
             android:id="@+id/nomTextView"
             android:layout_width="match_parent"
@@ -50,7 +41,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -76,7 +67,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -102,7 +93,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -129,15 +120,35 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/categorieTextView"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold" />
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/categorieTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageButton
+                android:id="@+id/deleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Bouton de suppression d'un vin"
+                android:src="@drawable/ic_bin"
+                android:backgroundTint="#FF0000"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 

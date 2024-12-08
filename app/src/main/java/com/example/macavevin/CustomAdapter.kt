@@ -77,12 +77,10 @@ class CustomAdapter(private var mList: List<VinsViewModel>,
                     val newQuantite = currentQuantite - 1
 
                     if (newQuantite > 0) {
-                        // Mise à jour de la quantité
                         collection.document(document.id).update("quantite", newQuantite.toString())
                             .addOnSuccessListener {
                                 Toast.makeText(contexte, "Quantité mise à jour avec succès", Toast.LENGTH_SHORT).show()
 
-                                // Mettre à jour la liste locale
                                 val updatedList = mList.toMutableList()
                                 val index = updatedList.indexOfFirst { it.nom == nom && it.annee == annee && it.categorie == categorie }
                                 if (index != -1) {
@@ -94,12 +92,10 @@ class CustomAdapter(private var mList: List<VinsViewModel>,
                                 Toast.makeText(contexte, "Erreur lors de la mise à jour de la quantité: ${e.message}", Toast.LENGTH_SHORT).show()
                             }
                     } else {
-                        // Supprimer le vin
                         collection.document(document.id).delete()
                             .addOnSuccessListener {
                                 Toast.makeText(contexte, "Vin supprimé avec succès", Toast.LENGTH_SHORT).show()
 
-                                // Supprimer de la liste locale
                                 val updatedList = mList.toMutableList()
                                 updatedList.removeAll { it.nom == nom && it.annee == annee && it.categorie == categorie }
                                 updateData(updatedList)
