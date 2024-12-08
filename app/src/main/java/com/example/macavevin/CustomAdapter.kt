@@ -77,33 +77,42 @@ class CustomAdapter(private var mList: List<VinsViewModel>,
                     val newQuantite = currentQuantite - 1
 
                     if (newQuantite > 0) {
+                        // Mise à jour de la quantité
                         collection.document(document.id).update("quantite", newQuantite.toString())
                             .addOnSuccessListener {
                                 Toast.makeText(contexte, "Quantité mise à jour avec succès", Toast.LENGTH_SHORT).show()
+
+                                // Mettre à jour la liste locale
+                                val updatedList = mList.toMutableList()
+                                val index = updatedList.indexOfFirst { it.nom == nom && it.annee == annee && it.categorie == categorie }
+                                if (index != -1) {
+                                    updatedList[index] = updatedList[index].copy(quantite = newQuantite.toString())
+                                    updateData(updatedList)
+                                }
                             }
                             .addOnFailureListener { e ->
                                 Toast.makeText(contexte, "Erreur lors de la mise à jour de la quantité: ${e.message}", Toast.LENGTH_SHORT).show()
                             }
                     } else {
-                        collection
-                            .whereEqualTo("nom", nom)
-                            .whereEqualTo("annee", annee).get().addOnSuccessListener { documents ->
-                            for (document in documents) {
-                                collection.document(document.id).delete().addOnSuccessListener {
-                                    Toast.makeText(contexte, "Vin supprimé avec succès", Toast.LENGTH_SHORT).show()
-                                }.addOnFailureListener { e ->
-                                    Toast.makeText(contexte, "Erreur lors de la suppression du vin : $e", Toast.LENGTH_SHORT).show()
-                                }
-                            }
-                        }.addOnFailureListener { e ->
-                            Toast.makeText(contexte, "Erreur lors de la recherche du vin à supprimer : $e", Toast.LENGTH_SHORT).show()
-                        }
-                    }
+                        // Supprimer le vin
+                        collection.document(document.id).delete()
+                            .addOnSuccessListener {
+                                Toast.makeText(contexte, "Vin supprimé avec succès", Toast.LENGTH_SHORT).show()
 
+                                // Supprimer de la liste locale
+                                val updatedList = mList.toMutableList()
+                                updatedList.removeAll { it.nom == nom && it.annee == annee && it.categorie == categorie }
+                                updateData(updatedList)
+                            }
+                            .addOnFailureListener { e ->
+                                Toast.makeText(contexte, "Erreur lors de la suppression du vin : ${e.message}", Toast.LENGTH_SHORT).show()
+                            }
+                    }
                 }
-        }.addOnFailureListener { e ->
-            Toast.makeText(contexte, "Erreur lors de la recherche du vin à supprimer : $e", Toast.LENGTH_SHORT).show()
-        }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(contexte, "Erreur lors de la recherche du vin à supprimer : ${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     override fun getItemCount(): Int {
