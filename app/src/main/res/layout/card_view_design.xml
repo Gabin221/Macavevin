@@ -17,10 +17,11 @@
         android:background="@drawable/back">
 
         <ImageButton
-            android:id="@+id/imageBtn"
+            android:id="@+id/deleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:contentDescription="Bouton de suppression d'un vin"
             android:src="@drawable/ic_bin"
             android:backgroundTint="#FF0000"/>
 

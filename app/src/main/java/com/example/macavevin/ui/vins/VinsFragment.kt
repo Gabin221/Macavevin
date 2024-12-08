@@ -66,9 +66,9 @@ class VinsFragment : Fragment() {
             viewBlancRose = root.findViewById(R.id.viewBlancRose)
             viewRoseRouge = root.findViewById(R.id.viewRoseRouge)
 
-            adapterBlanc = CustomAdapter(emptyList())
-            adapterRose = CustomAdapter(emptyList())
-            adapterRouge = CustomAdapter(emptyList())
+            adapterBlanc = CustomAdapter(emptyList(), requireContext())
+            adapterRose = CustomAdapter(emptyList(), requireContext())
+            adapterRouge = CustomAdapter(emptyList(), requireContext())
 
             recyclerViewBlanc.adapter = adapterBlanc
             recyclerViewRose.adapter = adapterRose
