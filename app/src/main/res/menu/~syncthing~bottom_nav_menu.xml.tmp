@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_vins"
+        android:icon="@drawable/ic_vins_black_24dp"
+        android:title="@string/title_vins" />
+
+    <item
+        android:id="@+id/navigation_modifier"
+        android:icon="@drawable/ic_modifier_black_24dp"
+        android:title="@string/title_modifier" />
+
+</menu>
